@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Async2</title>
+</head>
+<body>
+    <h1>Hello lets learn Javascript</h1>
+    <button id ="Start">Start</button>
+    <button id ="stop">Stop</button>
+</body>
+<script>
+   
+   let intervalId; // Declare a variable to store the interval ID
+   const sayDate = function(str){
+    console.log(str, Date.now());
+   }
+
+   // Add event listner for the "start" button
+   document.querySelector('#Start').addEventListener('click', function(){
+    clearInterval(intervalId);
+    document.querySelector('h1').innerHTML = 'Hello game started'
+    intervalId = setInterval(sayDate, 2000, "hii bro Started");
+   });
+
+   // Add event listner for the "stop" button
+   document.querySelector('#stop').addEventListener('click', function(){
+    clearInterval(intervalId);
+    document.querySelector('h1').innerHTML = 'Hello ,game stopped !';
+    console.log("game is stoped");
+    
+   });
+
+
+
+
+</script>
+</html>
